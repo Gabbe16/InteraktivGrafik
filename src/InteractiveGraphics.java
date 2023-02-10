@@ -29,7 +29,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
     private int HorseVX = 0;
     private int HorseVY = 0;
 
-    private Rectangle horseHitbox = new Rectangle(HorseX, HorseY, Horse.getWidth(), Horse.getHeight());
+    private Rectangle horseHitbox;
    // private int x = 0;
    // private int y = 0;
    // private Rectangle hitbox = new Rectangle(x,y,30,30);
@@ -49,7 +49,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        horseHitbox = new Rectangle(HorseX, HorseY, Horse.getWidth(), Horse.getHeight());
         try {
             bitcoincoin = ImageIO.read(new File("bitcoincoin.png"));
         } catch (MalformedURLException e) {
