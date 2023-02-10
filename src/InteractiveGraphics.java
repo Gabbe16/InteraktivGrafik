@@ -29,6 +29,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
     private int HorseVX = 0;
     private int HorseVY = 0;
 
+    private Rectangle horseHitbox = new Rectangle(HorseX, HorseY, Horse.getWidth(), Horse.getHeight());
    // private int x = 0;
    // private int y = 0;
    // private Rectangle hitbox = new Rectangle(x,y,30,30);
@@ -37,6 +38,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
     private BufferedImage bitcoincoin;
     private int bitcoincoinX = (int) (Math.random()*560);
     private int bitcoincoinY = (int) (Math.random()*360);
+    private Rectangle bitcoincoinHitbox = new Rectangle(bitcoincoinX, bitcoincoinY, bitcoincoin.getWidth(), bitcoincoin.getHeight());
     //private Rectangle target = new Rectangle(targetX, targetY, 40,40);
 
     public InteractiveGraphics() {
@@ -87,9 +89,11 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         //g.fillRect(target.x, target.y, target.width, target.height);
         //g.setColor(new Color(0xBE5817));
         //g.fillOval(hitbox.x,hitbox.y,hitbox.width,hitbox.height);
+        g.fillRect(horseHitbox.x, horseHitbox.y, horseHitbox.width, horseHitbox.height);
+        g.fillRect(bitcoincoinHitbox.x, bitcoincoinHitbox.y, bitcoincoinHitbox.width, bitcoincoinHitbox.height);
+
         g.drawImage(bitcoincoin, bitcoincoinX, bitcoincoinY, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8,null);
         g.drawImage(Horse, HorseX, HorseY, Horse.getWidth()/10, Horse.getHeight()/10, null);
-
     }
 
     private void update() {

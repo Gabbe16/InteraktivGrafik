@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6a0dc5-ff79-40f2-bc5d-1e5e73be847f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Horse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InteraktivGrafik.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bitcoincoin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InteractiveGraphics.java" afterDir="false" />
+    <list default="true" id="5a6a0dc5-ff79-40f2-bc5d-1e5e73be847f" name="Changes" comment="First commit, added readme and old code for my projekt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InteractiveGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InteractiveGraphics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +68,13 @@
       <option name="presentableId" value="Default" />
       <updated>1676020716764</updated>
     </task>
+    <task id="LOCAL−00001" summary="First commit, added readme and old code for my projekt">
+      <created>1676022351336</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1676022351336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit, added readme and old code for my projekt" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit, added readme and old code for my projekt" />
   </component>
 </project>
