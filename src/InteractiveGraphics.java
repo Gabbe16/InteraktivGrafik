@@ -1,11 +1,6 @@
-import sun.security.ssl.HandshakeOutStream;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferStrategy;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -14,32 +9,23 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
+
 
 public class InteractiveGraphics extends Canvas implements Runnable{
     private BufferStrategy bs;
-
     private boolean running = false;
     private Thread thread;
 
-    private BufferedImage Horse;
 
-    private int HorseX = 100;
-    private int HorseY = 100;
+    private BufferedImage Horse;
     private int HorseVX = 0;
     private int HorseVY = 0;
-
     private Rectangle horseHitbox;
-   // private int x = 0;
-   // private int y = 0;
-   // private Rectangle hitbox = new Rectangle(x,y,30,30);
 
 
     private BufferedImage bitcoincoin;
-    private int bitcoincoinX = (int) (Math.random()*560);
-    private int bitcoincoinY = (int) (Math.random()*360);
-    private Rectangle bitcoincoinHitbox = new Rectangle(bitcoincoinX, bitcoincoinY, bitcoincoin.getWidth(), bitcoincoin.getHeight());
-    //private Rectangle target = new Rectangle(targetX, targetY, 40,40);
+    private Rectangle bitcoincoinHitbox;
+
 
     public InteractiveGraphics() {
         try {
@@ -49,7 +35,8 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        horseHitbox = new Rectangle(HorseX, HorseY, Horse.getWidth(), Horse.getHeight());
+        horseHitbox = new Rectangle(100, 100, Horse.getWidth()/10, Horse.getHeight()/10);
+
         try {
             bitcoincoin = ImageIO.read(new File("bitcoincoin.png"));
         } catch (MalformedURLException e) {
@@ -57,6 +44,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        bitcoincoinHitbox = new Rectangle( (int)Math.random()*560, (int)Math.random()*360, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8);
 
         setSize(600,400);
         JFrame frame = new JFrame();
@@ -76,7 +64,6 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         }
         Graphics g = bs.getDrawGraphics();
 
-        // Rita ut den nya bilden
         draw(g);
 
         g.dispose();
@@ -85,24 +72,17 @@ public class InteractiveGraphics extends Canvas implements Runnable{
 
     public void draw(Graphics g) {
         g.clearRect(0,0,getWidth(),getHeight());
-        //g.setColor(targetColor);
-        //g.fillRect(target.x, target.y, target.width, target.height);
-        //g.setColor(new Color(0xBE5817));
-        //g.fillOval(hitbox.x,hitbox.y,hitbox.width,hitbox.height);
-        g.fillRect(horseHitbox.x, horseHitbox.y, horseHitbox.width, horseHitbox.height);
-        g.fillRect(bitcoincoinHitbox.x, bitcoincoinHitbox.y, bitcoincoinHitbox.width, bitcoincoinHitbox.height);
-
-        g.drawImage(bitcoincoin, bitcoincoinX, bitcoincoinY, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8,null);
-        g.drawImage(Horse, HorseX, HorseY, Horse.getWidth()/10, Horse.getHeight()/10, null);
+        g.drawImage(bitcoincoin, bitcoincoinHitbox.x, bitcoincoinHitbox.y, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8,null);
+        g.drawImage(Horse, horseHitbox.x, horseHitbox.y, Horse.getWidth()/10, Horse.getHeight()/10, null);
     }
 
     private void update() {
-        HorseX += HorseVX;
-        HorseY += HorseVY;
-        // if (target.intersects(hitbox)) {
-            //target.x = (int) (Math.random()*560);
-            //target.y = (int) (Math.random()*360);
-       // }
+        horseHitbox.x += HorseVX;
+        horseHitbox.y += HorseVY;
+        if (bitcoincoinHitbox.intersects(horseHitbox)) {
+            bitcoincoinHitbox.x = (int) (Math.random()*560);
+            bitcoincoinHitbox.y = (int) (Math.random()*360);
+        }
     }
 
     public static void main(String[] args) {
@@ -115,6 +95,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         thread = new Thread(this);
         thread.start();
     }
+
     public synchronized void stop() {
         running = false;
         try {
@@ -135,9 +116,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
             lastTime = now;
 
             while(delta >= 1) {
-                // Uppdatera koordinaterna
                 update();
-                // Rita ut bilden med updaterad data
                 render();
                 delta--;
             }
