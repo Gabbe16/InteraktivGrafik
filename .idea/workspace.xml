@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6a0dc5-ff79-40f2-bc5d-1e5e73be847f" name="Changes" comment="Added hitboxes for horse and coins">
+    <list default="true" id="5a6a0dc5-ff79-40f2-bc5d-1e5e73be847f" name="Changes" comment="Lade till loggbok">
+      <change afterPath="$PROJECT_DIR$/Stonks.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InteractiveGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InteractiveGraphics.java" afterDir="false" />
     </list>
@@ -32,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Code/Projects/InteraktivGrafik",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Code/Projects/InteraktivGrafik&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Code\Projects\InteraktivGrafik" />
@@ -90,7 +91,19 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1676023445996</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Updated hitboxes for the coin and horse + added collisions">
+      <created>1676383430374</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1676383430374</updated>
+    </task>
+    <task id="LOCAL−00005" summary="Lade till loggbok">
+      <created>1676383621848</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1676383621848</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +120,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit, added readme and old code for my projekt" />
     <MESSAGE value="Added hitboxes for horse and coins" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hitboxes for horse and coins" />
+    <MESSAGE value="Updated hitboxes for the coin and horse + added collisions" />
+    <MESSAGE value="Lade till loggbok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lade till loggbok" />
   </component>
 </project>

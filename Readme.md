@@ -14,7 +14,12 @@ Min tanke är att göra följande:
 
 # V.6
 
-Jag har lagt till gamla coden till detta projekt och tagit bort det onödiga. Jag lade även till häst bilden och coin bilden
+Fre. 
+- Jag har lagt till gamla coden till detta projekt och tagit bort det onödiga. Jag lade även till häst bilden och coin bilden
 
 # V.7
-Jag har fixat hitboxes för både hästen och för en coin som man tar och också lagt till collisioner mellan båda
+Ti. 
+- Jag har fixat hitboxes för både hästen och för en coin som man tar och också lagt till collisioner mellan båda
+
+Fre. 
+- Jag har fixat en backgrund för hela canvas, fixat hastigheten för hästen och gjort att canvas setsize är hela skärmen

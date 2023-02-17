@@ -1,5 +1,8 @@
+import sun.swing.BakedArrayList;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.tools.Tool;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.event.KeyEvent;
@@ -23,6 +26,8 @@ public class InteractiveGraphics extends Canvas implements Runnable{
     private Rectangle horseHitbox;
 
 
+    private BufferedImage Background;
+
     private BufferedImage bitcoincoin;
     private Rectangle bitcoincoinHitbox;
 
@@ -44,9 +49,18 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        bitcoincoinHitbox = new Rectangle( (int)Math.random()*560, (int)Math.random()*360, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8);
+        bitcoincoinHitbox = new Rectangle( (int)Math.random()*1860, (int)Math.random()*1020, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8);
 
-        setSize(600,400);
+        try {
+            Background = ImageIO.read(new File("Stonks.png"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setSize(screenSize);
         JFrame frame = new JFrame();
         frame.add(this);
         this.addKeyListener(new MyKeyListener());
@@ -72,6 +86,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
 
     public void draw(Graphics g) {
         g.clearRect(0,0,getWidth(),getHeight());
+        g.drawImage(Background, 0, 0, Background.getWidth(), Background.getHeight(), null);
         g.drawImage(bitcoincoin, bitcoincoinHitbox.x, bitcoincoinHitbox.y, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8,null);
         g.drawImage(Horse, horseHitbox.x, horseHitbox.y, Horse.getWidth()/10, Horse.getHeight()/10, null);
     }
@@ -80,8 +95,8 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         horseHitbox.x += HorseVX;
         horseHitbox.y += HorseVY;
         if (bitcoincoinHitbox.intersects(horseHitbox)) {
-            bitcoincoinHitbox.x = (int) (Math.random()*560);
-            bitcoincoinHitbox.y = (int) (Math.random()*360);
+            bitcoincoinHitbox.x = (int) (Math.random()*1860);
+            bitcoincoinHitbox.y = (int) (Math.random()*1020);
         }
     }
 
@@ -106,7 +121,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
     }
 
     public void run() {
-        double ns = 1000000000.0 / 25.0;
+        double ns = 1000000000.0 / 100.0;
         double delta = 0;
         long lastTime = System.nanoTime();
 
@@ -134,16 +149,16 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         @Override
         public void keyPressed(KeyEvent e) {
             if (e.getKeyChar() == 'a') {
-                HorseVX = -5;
+                HorseVX = -12;
             }
             if (e.getKeyChar() == 'd') {
-                HorseVX = 5;
+                HorseVX = 12;
             }
             if (e.getKeyChar() == 'w') {
-                HorseVY = -5;
+                HorseVY = -12;
             }
             if (e.getKeyChar() == 's') {
-                HorseVY = 5;
+                HorseVY = 12;
             }
         }
 
