@@ -23,3 +23,8 @@ Ti.
 
 Fre. 
 - Jag har fixat en backgrund för hela canvas, fixat hastigheten för hästen och gjort att canvas setsize är hela skärmen
+
+# V.9
+
+Fre.
+- Jag har fixat artifact för att man ska kunna ladda ned programmet som en jar-fil och därefter påbörjat en hemsida så att andra personer kan ladda ned.

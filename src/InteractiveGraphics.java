@@ -34,7 +34,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
 
     public InteractiveGraphics() {
         try {
-            Horse = ImageIO.read(new File("Horse.png"));
+            Horse = ImageIO.read(getClass().getResource("Horse.png"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -43,7 +43,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         horseHitbox = new Rectangle(100, 100, Horse.getWidth()/10, Horse.getHeight()/10);
 
         try {
-            bitcoincoin = ImageIO.read(new File("bitcoincoin.png"));
+            bitcoincoin = ImageIO.read(getClass().getResource("bitcoincoin.png"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -52,7 +52,7 @@ public class InteractiveGraphics extends Canvas implements Runnable{
         bitcoincoinHitbox = new Rectangle( (int)Math.random()*1860, (int)Math.random()*1020, bitcoincoin.getWidth()/8, bitcoincoin.getHeight()/8);
 
         try {
-            Background = ImageIO.read(new File("Stonks.png"));
+            Background = ImageIO.read(getClass().getResource("Stonks.png"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
